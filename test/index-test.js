@@ -78,10 +78,11 @@ describe('Redux', () => {
     store.dispatch({type: 'ADD_BAND', name: 'Talking Heads'})
 
     expect(store.getState().bands.length).to.equal(3)
-
+    // console.log(store.getState().bands)
 
     let ids = store.getState()
       .bands.map(band => band.id)
+    // console.log(ids)
 
     store.dispatch({type: 'DELETE_BAND', id: ids[1]})
 
