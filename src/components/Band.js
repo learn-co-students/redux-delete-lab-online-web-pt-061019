@@ -8,10 +8,15 @@ class Band extends Component {
   //   </li>
   // }
 
+  handleOnClick = (event) => {
+    event.preventDefault();
+    this.props.deleteBand(this.props.id)
+  }
+
   render() {
     return(
       <li>
-        {this.props.band.name}
+        {this.props.name} - <button onClick={this.handleOnClick}>Delete</button>
       </li>
     );
   }
